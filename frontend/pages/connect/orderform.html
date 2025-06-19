@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="/frontend/assets/page/logo.png"
+      type="image/x-icon"
+    />
+    <title>Order Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 30px auto;
+        padding: 10px;
+        background: #f9f9f9;
+        border-radius: 6px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      }
+      label {
+        display: block;
+        margin: 15px 0 5px;
+      }
+      input,
+      select,
+      button {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+      }
+      button {
+        background-color: #28a745;
+        color: white;
+        border: none;
+        margin-top: 20px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #218838;
+      }
+      #productName {
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Order Form</h1>
+    <form id="orderForm">
+      <input type="hidden" id="productId" />
+      <input type="hidden" id="price" />
+
+      <p id="productName">Product Name Here</p>
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" placeholder="Your full name" required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" placeholder="you@example.com" required />
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" value="1" min="1" required />
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" placeholder="+977-98XXXXXXXX" required />
+
+      <label for="address">Address:</label>
+      <input
+        type="text"
+        id="address"
+        placeholder="Your delivery address"
+        required
+      />
+
+      <label for="paymentMethod">Payment Method:</label>
+      <select id="paymentMethod" required>
+        <option value="CashOnDelivery">Cash on Delivery</option>
+      </select>
+
+      <button type="submit">Place Order</button>
+    </form>
+
+    <script src="/frontend/js/order.js" defer></script>
+    
+  </body>
+</html>

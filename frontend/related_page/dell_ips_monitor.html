@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="/frontend/assets/page/logo.png" type="image/png" />
+  <title>Dell 24" IPS FreeSync Full HD Monitor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .image-gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-wrapper {
+      display: flex;
+      gap: 15px;
+    }
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .thumbnail {
+      width: 80px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+    .thumbnail.active {
+      border-color: #d00;
+    }
+    .main-image {
+      flex: 1;
+      max-width: 500px;
+      aspect-ratio: 4 / 3;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .product-details {
+      flex: 2;
+      min-width: 300px;
+    }
+    .price {
+      color: red;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .benefits li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+    .actions {
+      margin: 20px 0;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .btn {
+      background: #d00;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn.secondary {
+      background: #333;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .specs-table td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      .image-wrapper {
+        flex-direction: column;
+      }
+      .thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="product-container">
+    <div class="image-gallery">
+      <div class="image-wrapper">
+        <div class="thumbnails">
+          <img src="/frontend/assets/product/dell_fullhd_front.jpg" alt="Front View" class="thumbnail active" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/dell_fullhd_side.jpg" alt="Side View" class="thumbnail" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/dell_fullhd_back.jpg" alt="Back View" class="thumbnail" onclick="changeImage(this)" />
+        </div>
+        <div class="main-image">
+          <img id="mainImage" src="/frontend/assets/product/dell_fullhd_front.jpg" alt="Main Product Image" />
+        </div>
+      </div>
+    </div>
+
+    <div class="product-details">
+      <h1>Dell 24″ IPS Full HD Monitor with AMD FreeSync</h1>
+      <p class="price">Rs. 26,500</p>
+      <ul class="benefits">
+        <li>✅ 24″ IPS panel – crisp colors & wide viewing angles</li>
+        <li>✅ Full HD 1920×1080 at 75 Hz with AMD FreeSync</li>
+        <li>✅ Slim bezels ideal for dual-monitor setups</li>
+        <li>✅ Built-in low-blue light & flicker-free tech</li>
+        <li>✅ VGA, HDMI connectivity & VESA wall-mountable</li>
+        <li>✅ 3-Year Warranty – available in Nepal</li>
+      </ul>
+
+      <div class="actions">
+        <input type="number" value="1" min="1" />
+        <button class="btn">Add to Cart</button>
+        <button class="btn secondary">Buy Now</button>
+      </div>
+
+      <h2>Specifications</h2>
+      <table class="specs-table">
+        <tr><td>Model</td><td>Dell 24″ IPS FHD (e.g., SE2419HR)</td></tr>
+        <tr><td>Panel Type</td><td>IPS</td></tr>
+        <tr><td>Resolution</td><td>1920 × 1080 (Full HD)</td></tr>
+        <tr><td>Refresh Rate</td><td>75 Hz with AMD FreeSync</td></tr>
+        <tr><td>Response Time</td><td>6 ms (Gray‑to‑Gray)</td></tr>
+        <tr><td>Brightness</td><td>250 cd/m²</td></tr>
+        <tr><td>Color Gamut</td><td>NTSC 72%</td></tr>
+        <tr><td>Ports</td><td>1× HDMI, 1× VGA</td></tr>
+        <tr><td>Adjustments</td><td>Tilt: −5° to 21°</td></tr>
+        <tr><td>Speakers</td><td>No (included in some variants)</td></tr>
+        <tr><td>VESA Mount</td><td>100×100 mm</td></tr>
+        <tr><td>Power</td><td>External adapter</td></tr>
+        <tr><td>Dimensions</td><td>540×310×50 mm (without stand)</td></tr>
+        <tr><td>Weight</td><td>~3.3 kg</td></tr>
+        <tr><td>Warranty</td><td>3 Years On‑site (Nepal)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    function changeImage(thumb) {
+      document.getElementById("mainImage").src = thumb.src;
+      document.querySelectorAll(".thumbnail").forEach(el => el.classList.remove("active"));
+      thumb.classList.add("active");
+    }
+  </script>
+
+  <script src="/frontend/js/partial.js"></script>
+  <script>
+    includeHTML("#header", "/frontend/partials/header.html", initHeaderScripts);
+    includeHTML("#footer", "/frontend/partials/footer.html");
+
+    function initHeaderScripts() {
+      const burger = document.querySelector(".hamburger");
+      const menu = document.getElementById("navMenu");
+      if (burger && menu) {
+        burger.addEventListener("click", () => menu.classList.toggle("show"));
+      }
+      document.querySelectorAll(".dropdown").forEach(dd => dd.addEventListener("click", () => {
+        if (window.innerWidth <= 768) dd.classList.toggle("active");
+      }));
+    }
+  </script>
+</body>
+</html>

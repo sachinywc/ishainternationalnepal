@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="/frontend/assets/page/logo.png" type="image/png" />
+  <title>Beetel M55N Black Corded Landline Phone</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .image-gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-wrapper {
+      display: flex;
+      gap: 15px;
+    }
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .thumbnail {
+      width: 80px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+    .thumbnail.active {
+      border-color: #d00;
+    }
+    .main-image {
+      flex: 1;
+      max-width: 500px;
+      aspect-ratio: 4 / 3;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .product-details {
+      flex: 2;
+      min-width: 300px;
+    }
+    .price {
+      color: red;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .benefits li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+    .actions {
+      margin: 20px 0;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .btn {
+      background: #d00;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn.secondary {
+      background: #333;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .specs-table td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      .image-wrapper {
+        flex-direction: column;
+      }
+      .thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="product-container">
+    <div class="image-gallery">
+      <div class="image-wrapper">
+        <div class="thumbnails">
+          <img src="/frontend/assets/product/beetel_m55n_black_front.jpg" alt="Front View" class="thumbnail active" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/beetel_m55n_black_side.jpg" alt="Side View" class="thumbnail" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/beetel_m55n_black_handset.jpg" alt="Handset View" class="thumbnail" onclick="changeImage(this)" />
+        </div>
+        <div class="main-image">
+          <img id="mainImage" src="/frontend/assets/product/beetel_m55n_black_front.jpg" alt="Main Product Image" />
+        </div>
+      </div>
+    </div>
+
+    <div class="product-details">
+      <h1>Beetel M55N Black Corded Landline Telephone</h1>
+      <p class="price">Rs. 1,150</p>
+      <ul class="benefits">
+        <li>✅ Crisp Voice Clarity with Echo-Free DSP</li>
+        <li>✅ Caller-ID with 50-Number Memory Storage</li>
+        <li>✅ Convenient Hands-Free Speaker Mode</li>
+        <li>✅ Easy-to-Read Caller-ID LCD Screen</li>
+        <li>✅ Durable Wall-Mountable Design</li>
+        <li>✅ One-Touch Redial & Pause Functionality</li>
+      </ul>
+
+      <div class="actions">
+        <input type="number" value="1" min="1" />
+        <button class="btn">Add to Cart</button>
+        <button class="btn secondary">Buy Now</button>
+      </div>
+
+      <h2>Specifications</h2>
+      <table class="specs-table">
+        <tr><td>Model</td><td>Beetel M55N</td></tr>
+        <tr><td>Connection</td><td>Corded RJ11</td></tr>
+        <tr><td>Caller ID</td><td>Yes, LCD Display</td></tr>
+        <tr><td>Memory</td><td>50 Numbers</td></tr>
+        <tr><td>Speakerphone</td><td>Hands-Free</td></tr>
+        <tr><td>Power</td><td>Powered via Phone Line</td></tr>
+        <tr><td>Wall-Mountable</td><td>Yes</td></tr>
+        <tr><td>Dimensions</td><td>200 x 150 x 80 mm</td></tr>
+        <tr><td>Weight</td><td>~350g</td></tr>
+        <tr><td>Color</td><td>Black</td></tr>
+        <tr><td>Warranty</td><td>1 Year (Nepal Warranty)</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    function changeImage(thumb) {
+      document.getElementById("mainImage").src = thumb.src;
+      document.querySelectorAll(".thumbnail").forEach(el => el.classList.remove("active"));
+      thumb.classList.add("active");
+    }
+  </script>
+
+  <script src="/frontend/js/partial.js"></script>
+  <script>
+    includeHTML("#header", "/frontend/partials/header.html", initHeaderScripts);
+    includeHTML("#footer", "/frontend/partials/footer.html");
+
+    function initHeaderScripts() {
+      const burger = document.querySelector(".hamburger");
+      const menu = document.getElementById("navMenu");
+      if (burger && menu) {
+        burger.addEventListener("click", () => {
+          menu.classList.toggle("show");
+        });
+      }
+      document.querySelectorAll(".dropdown").forEach(dropdown => {
+        dropdown.addEventListener("click", () => {
+          if (window.innerWidth <= 768) dropdown.classList.toggle("active");
+        });
+      });
+    }
+  </script>
+</body>
+</html>

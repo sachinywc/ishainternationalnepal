@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="/frontend/assets/page/logo.png" type="image/png" />
+  <title>Kisonli U-2900 Gaming Speaker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .image-gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-wrapper {
+      display: flex;
+      gap: 15px;
+    }
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .thumbnail {
+      width: 80px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+    .thumbnail.active {
+      border-color: #d00;
+    }
+    .main-image {
+      flex: 1;
+      max-width: 500px;
+      aspect-ratio: 4 / 3;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .product-details {
+      flex: 2;
+      min-width: 300px;
+    }
+    .price {
+      color: red;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .benefits li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+    .actions {
+      margin: 20px 0;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .btn {
+      background: #d00;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn.secondary {
+      background: #333;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .specs-table td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      .image-wrapper {
+        flex-direction: column;
+      }
+      .thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+
+  <div class="product-container">
+    <div class="image-gallery">
+      <div class="image-wrapper">
+        <div class="thumbnails">
+          <img src="/frontend/assets/product/kisonli_u2900_front.jpg" alt="Front View" class="thumbnail active" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/kisonli_u2900_side.jpg" alt="Side View" class="thumbnail" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/kisonli_u2900_box.jpg" alt="Box View" class="thumbnail" onclick="changeImage(this)" />
+        </div>
+        <div class="main-image">
+          <img id="mainImage" src="/frontend/assets/product/kisonli_u2900_front.jpg" alt="Main Product Image" />
+        </div>
+      </div>
+    </div>
+
+    <div class="product-details">
+      <h1>Kisonli U-2900 RGB Gaming Speaker – Stereo Sound with USB</h1>
+      <p class="price">Rs. 1,250</p>
+      <ul class="benefits">
+        <li>✅ Dynamic RGB Lighting Effects</li>
+        <li>✅ Stereo Sound for Gaming & Media</li>
+        <li>✅ USB Powered, 3.5mm Audio Input</li>
+        <li>✅ Compact Design with Strong Bass</li>
+        <li>✅ Plug and Play, No Driver Needed</li>
+        <li>✅ Ideal for PC, Laptop & Gaming Consoles</li>
+      </ul>
+
+      <div class="actions">
+        <input type="number" value="1" min="1" />
+        <button class="btn">Add to Cart</button>
+        <button class="btn secondary">Buy Now</button>
+      </div>
+
+      <h2>Specifications</h2>
+      <table class="specs-table">
+        <tr><td>Model</td><td>Kisonli U-2900</td></tr>
+        <tr><td>Speaker Type</td><td>2.0 Channel Stereo</td></tr>
+        <tr><td>Power Supply</td><td>USB 5V</td></tr>
+        <tr><td>Audio Input</td><td>3.5mm Aux</td></tr>
+        <tr><td>Lighting</td><td>RGB Backlight</td></tr>
+        <tr><td>Output Power</td><td>2 x 3W</td></tr>
+        <tr><td>Frequency Response</td><td>90Hz – 20KHz</td></tr>
+        <tr><td>Control</td><td>Volume Knob</td></tr>
+        <tr><td>Dimensions</td><td>Approx. 75 x 90 x 180 mm</td></tr>
+        <tr><td>Compatibility</td><td>PC, Laptop, Console</td></tr>
+        <tr><td>Warranty</td><td>6 Months (Nepal Warranty)</td></tr>
+        <tr><td>Origin</td><td>Imported</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div id="footer"></div>
+
+  <script>
+    function changeImage(thumb) {
+      document.getElementById("mainImage").src = thumb.src;
+      document.querySelectorAll(".thumbnail").forEach(el => el.classList.remove("active"));
+      thumb.classList.add("active");
+    }
+  </script>
+
+  <script src="/frontend/js/partial.js"></script>
+  <script>
+    includeHTML("#header", "/frontend/partials/header.html", initHeaderScripts);
+    includeHTML("#footer", "/frontend/partials/footer.html");
+
+    function initHeaderScripts() {
+      const burger = document.querySelector(".hamburger");
+      const menu = document.getElementById("navMenu");
+      if (burger && menu) {
+        burger.addEventListener("click", () => {
+          menu.classList.toggle("show");
+        });
+      }
+      const dropdowns = document.querySelectorAll(".dropdown");
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>

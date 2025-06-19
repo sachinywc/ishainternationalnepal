@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isha International</title>
+    <meta
+      name="description"
+      content="Your one-stop shop for computer, laptop, printer, CCTV, and IT accessory sales and repairs!"
+    />
+    <link rel="stylesheet" href="/frontend/css/main.css" />
+    <link
+      rel="icon"
+      href="/frontend/assets/page/logo.png"
+      type="image/png"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Computer Store",
+        "name": "Isha International",
+        "url": "https://ishainternational.com.np",
+        "logo": "/frontend/assets/page/logo.png"
+      }
+    </script>
+  </head>
+
+  <body>
+    <header class="isha-header">
+      <div class="header-wrapper">
+        <div class="logo" style="cursor: pointer" id="home">
+          <h1 style="cursor: pointer" id="home">
+            <img
+              src="/frontend/assets/page/logo.png"
+              height="30px"
+              alt="Isha International Logo"
+            />
+            Isha International
+          </h1>
+        </div>
+        <div class="header-search">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+          <button id="searchButton" aria-label="Search">
+            🔍
+          </button>
+        <div class="header-contact">
+          <span class="contact-number">📞 01-41682299</span>
+          <div class="social-links">
+            <a
+              href="https://www.instagram.com/ishainternationalnepal/"
+              target="_blank"
+              aria-label="Instagram"
+              >📷</a
+            >
+            <a
+              href="https://www.facebook.com/p/Isha-international-100063184932852/"
+              aria-label="Facebook"
+              target="_blank"
+              >📘</a
+            >
+            <a
+              href="https://wa.me/+9779841934811"
+              target="_blank"
+              aria-label="WhatsApp"
+              >💬</a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+      <a href="/frontend/pages/blog/asus-vivobook.html">Blog</a>
+
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="menu" id="navMenu">
+        <div class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Laptops ▾</a>
+          <div class="dropdown-content">
+            <a href="/frontend/pages/laptop/asus.html">Asus</a>
+            <a href="/frontend/pages/laptop/hp.html">HP</a>
+            <a href="/frontend/pages/laptop/lenovo.html">Lenovo</a>
+            <a href="/frontend/pages/laptop/dell.html">Dell</a>
+          </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Desktops & Server ▾</a>
+          <div class="dropdown-content">
+            <a href="/frontend/pages/desktop and server/branded.html"
+              >Branded Desktops</a
+            >
+            <a href="/frontend/pages/desktop and server/allinonepc.html"
+              >All In One PC</a
+            >
+            <a href="/frontend/pages/desktop and server/servers.html"
+              >Servers</a
+            >
+          </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Components ▾</a>
+          <div class="dropdown-content">
+            <a href="/frontend/pages/components/motherboards.html"
+              >Motherboards</a
+            >
+            <a href="/frontend/pages/components/processors.html">Processors</a>
+            <a href="/frontend/pages/components/ram.html">RAM</a>
+            <a href="/frontend/pages/components/graphic-card.html"
+              >Graphic Card</a
+            >
+          </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">CCTV & Accessories ▾</a>
+          <div class="dropdown-content">
+            <a href="/frontend/pages/cctv and accessories/cameras.html"
+              >Cameras</a
+            >
+            <a href="/frontend/pages/cctv and accessories/video-recorder.html"
+              >Video Recorder</a
+            >
+            <a href="/frontend/pages/cctv and accessories/switch.html"
+              >Switch</a
+            >
+            <a href="/frontend/pages/cctv and accessories/storage.html"
+              >Storage</a
+            >
+          </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Printer & Scanner ▾</a>
+          <div class="dropdown-content">
+            <a href="/frontend/pages/printer and scanner/hp-scanner.html"
+              >HP Scanner</a
+            >
+            <a href="/frontend/pages/printer and scanner/canon.html">Canon</a>
+            <a href="/frontend/pages/printer and scanner/epson.html">Epson</a>
+            <a href="/frontend/pages/printer and scanner/brother.html"
+              >Brother</a
+            >
+          </div>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown(this)">
+          <a href="#">Profile ▾</a>
+          <div class="dropdown-content">
+            <a href="/frontend/pages/connect/login.html">My Account</a>
+            <a href="#">Orders</a>
+            <a href="#">Logout</a>
+          </div>
+        </div>
+
+        <a href="#">Contact Us</a>
+        <a href="#">Build Your PC</a>
+      </div>
+    </div>
+
+    <!-- Hero/Home Section -->
+    <div class="hero-slider">
+      <img
+        class="hero-slide active"
+        src="/frontend/assets/home/a.jpeg"
+        alt="Slide 1"
+        loading="lazy"
+      />
+      <img
+        class="hero-slide"
+        src="/frontend/assets/home/b.jpeg"
+        alt="Slide 2"
+        loading="lazy"
+      />
+      <img
+        class="hero-slide"
+        src="/frontend/assets/home/c.jpeg"
+        alt="Slide 3"
+        loading="lazy"
+      />
+
+      <div class="dots">
+        <span class="active"></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    
+
+    <!-- module -->
+    <div id="content" style="display: none"></div>
+    <div id="feature-section"></div>
+    <div id="product-section"></div>
+    <div id="you-may-also-like-section"></div>
+    <div id="services-section"></div>
+   
+    <!-- Footer link -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <!-- Brand Info -->
+        <div class="footer-section about">
+          <h2 class="logo-text">Isha International</h2>
+          <p>Your trusted source for electronics and computer accessories.</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-section links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#feature">Feature</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#services">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-section contact">
+          <h3>Contact Us</h3>
+          <p>
+            Email:
+            <script>
+              const user = "isha.international8";
+              const domain = "gmail.com";
+              const subject = encodeURIComponent("Inquiry from Website");
+              const body = encodeURIComponent(
+                "Hello,\n\nI would like to get in touch with you regarding..."
+              );
+
+              const mailtoLink = `mailto:${user}@${domain}?subject=${subject}&body=${body}`;
+              const styles =
+                "text-decoration:none; color:inherit; font-weight:500;";
+              document.write(
+                `<a href="${mailtoLink}" style="${styles}">${user}@${domain}</a>`
+              );
+            </script>
+          </p>
+          <p>Phone: 9841934811, 01-41682299</p>
+          <p>Location: Putalisadak, Kathmandu, Nepal</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-section social">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/p/Isha-international-100063184932852/"
+              target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/facebook.svg"
+                alt="Facebook"
+            /></a>
+            <a
+              href="https://www.instagram.com/ishainternationalnepal/"
+              target="_blank"
+              ><img
+                src="https://cdn.jsdelivr.net/npm/simple-icons@v8/icons/instagram.svg"
+                alt="Instagram"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        &copy; 2025 Isha International. All rights reserved.
+      </div>
+    </footer>
+
+    <script>
+      function toggleMenu() {
+        const menu = document.getElementById("navMenu");
+        menu.classList.toggle("show");
+      }
+
+      function toggleDropdown(dropdown) {
+        if (window.innerWidth <= 768) {
+          dropdown.classList.toggle("active");
+        }
+      }
+    </script>
+    <script>
+      const slides = document.querySelectorAll(".hero-slide");
+      const dots = document.querySelectorAll(".dots span");
+      let index = 0;
+
+      function showSlide(i) {
+        slides.forEach((s) => s.classList.remove("active"));
+        dots.forEach((d) => d.classList.remove("active"));
+        slides[i].classList.add("active");
+        dots[i].classList.add("active");
+      }
+
+      function nextSlide() {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      }
+
+      setInterval(nextSlide, 5000);
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener("click", () => {
+          index = i;
+          showSlide(index);
+        });
+      });
+    </script>
+    <script type="module" src="/frontend/js/index.js"></script>
+    <script type="module" src="/frontend/js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" href="/frontend/assets/page/logo.png" type="image/png" />
+  <title>Intel Core i5 12th Gen 12400 Processor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .image-gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-wrapper {
+      display: flex;
+      gap: 15px;
+    }
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .thumbnail {
+      width: 80px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+    .thumbnail.active {
+      border-color: #d00;
+    }
+    .main-image {
+      flex: 1;
+      max-width: 500px;
+      aspect-ratio: 4 / 3;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .product-details {
+      flex: 2;
+      min-width: 300px;
+    }
+    .price {
+      color: red;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .benefits li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+    .actions {
+      margin: 20px 0;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .btn {
+      background: #d00;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn.secondary {
+      background: #333;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .specs-table td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      .image-wrapper {
+        flex-direction: column;
+      }
+      .thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="header"></div>
+  <div class="product-container">
+    <div class="image-gallery">
+      <div class="image-wrapper">
+        <div class="thumbnails">
+          <img src="/frontend/assets/product/core_i5.jpg" alt="Processor Box Front" class="thumbnail active" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/i5_core.jpg" alt="Processor Box Back" class="thumbnail" onclick="changeImage(this)" />
+          <img src="/frontend/assets/product/core_i5.jpg" alt="Processor Chip View" class="thumbnail" onclick="changeImage(this)" />
+        </div>
+        <div class="main-image">
+          <img id="mainImage" src="/frontend/assets/product/Core_i5_12th_Gen.jpg" alt="Intel Core i5 12th Gen" />
+        </div>
+      </div>
+    </div>
+
+    <div class="product-details">
+      <h1>Intel Core i5 12th Gen 12400 Processor</h1>
+      <p class="price">Rs. 35,000</p>
+      <ul class="benefits">
+        <li>✅ 6 Performance Cores, 12 Threads</li>
+        <li>✅ Excellent for Gaming and Productivity</li>
+        <li>✅ 1 Year Official Warranty</li>
+        <li>✅ Genuine Intel Product</li>
+        <li>✅ Fast Delivery All Over Nepal</li>
+      </ul>
+      <div class="actions">
+        <input type="number" value="1" min="1" />
+        <button class="btn">Add to Cart</button>
+        <button class="btn secondary" onclick="buyNow('core-i5-12th-gen', 'Intel Core i5 12th Gen 12400 Processor', 35000)">Buy Now</button>
+      </div>
+      <h2>Specifications</h2>
+      <table class="specs-table">
+        <tr><td>Model</td><td>Core i5-12400</td></tr>
+        <tr><td>Brand</td><td>Intel</td></tr>
+        <tr><td>Base Clock</td><td>2.5 GHz</td></tr>
+        <tr><td>Max Turbo Frequency</td><td>4.4 GHz</td></tr>
+        <tr><td>Cores / Threads</td><td>6 Cores / 12 Threads</td></tr>
+        <tr><td>Socket</td><td>LGA 1700</td></tr>
+        <tr><td>Cache</td><td>18MB Intel Smart Cache</td></tr>
+        <tr><td>Graphics</td><td>Intel UHD 730</td></tr>
+        <tr><td>Warranty</td><td>1 Year</td></tr>
+        <tr><td>Country of Origin</td><td>Malaysia / Vietnam (Depending on Batch)</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="footer"></div>
+  <script>
+    function changeImage(thumb) {
+      document.getElementById("mainImage").src = thumb.src;
+      document.querySelectorAll(".thumbnail").forEach(el => el.classList.remove("active"));
+      thumb.classList.add("active");
+    }
+  </script>
+  <script src="/frontend/js/partial.js"></script>
+  <script>
+    includeHTML("#header", "/frontend/partials/header.html", initHeaderScripts);
+    includeHTML("#footer", "/frontend/partials/footer.html");
+
+    function initHeaderScripts() {
+      const burger = document.querySelector(".hamburger");
+      const menu = document.getElementById("navMenu");
+      if (burger && menu) {
+        burger.addEventListener("click", () => {
+          menu.classList.toggle("show");
+        });
+      }
+      const dropdowns = document.querySelectorAll(".dropdown");
+      dropdowns.forEach(dropdown => {
+        dropdown.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            dropdown.classList.toggle("active");
+          }
+        });
+      });
+    }
+  </script>
+   <script>
+      function buyNow(id, name, price) {
+        const product = { productId: id, productName: name, price: price };
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+        window.location.href = "/frontend/pages/connect/orderform.html"; // adjust as needed
+      }
+
+      // Make it global:
+      window.buyNow = buyNow;
+    </script>
+</body>
+</html>

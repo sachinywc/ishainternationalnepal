@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="shortcut icon"
+      href="/frontend/assets/logo.png"
+      type="image/png"
+    />
+    <title>Dell Inspiron 15</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .image-gallery {
+      flex: 1;
+      min-width: 300px;
+    }
+    .image-wrapper {
+      display: flex;
+      gap: 15px;
+    }
+    .thumbnails {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .thumbnail {
+      width: 80px;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border: 2px solid transparent;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .thumbnail:hover {
+      transform: scale(1.05);
+    }
+    .thumbnail.active {
+      border-color: #d00;
+    }
+    .main-image {
+      flex: 1;
+      max-width: 500px;
+      aspect-ratio: 4 / 3;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .main-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    .product-details {
+      flex: 2;
+      min-width: 300px;
+    }
+    .price {
+      color: red;
+      font-size: 24px;
+      margin: 10px 0;
+    }
+    .benefits li {
+      list-style: none;
+      margin-bottom: 5px;
+    }
+    .actions {
+      margin: 20px 0;
+    }
+    input[type="number"] {
+      width: 60px;
+      padding: 5px;
+      margin-right: 10px;
+    }
+    .btn {
+      background: #d00;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .btn.secondary {
+      background: #333;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .specs-table td {
+      padding: 8px;
+      border: 1px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      .image-wrapper {
+        flex-direction: column;
+      }
+      .thumbnails {
+        flex-direction: row;
+        overflow-x: auto;
+      }
+    }
+  </style>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="product-container">
+      <div class="image-gallery">
+        <div class="image-wrapper">
+          <div class="thumbnails">
+            <img
+              src="/frontend/assets/product/dell inspiron 15.webp"
+              alt="Front View"
+              class="thumbnail active"
+              onclick="changeImage(this)"
+            />
+            <img
+              src="/frontend/assets/product/dell inspiron 15.webp"
+              alt="Side View"
+              class="thumbnail"
+              onclick="changeImage(this)"
+            />
+            <img
+              src="/frontend/assets/product/dell inspiron.webp"
+              alt="Angle View"
+              class="thumbnail"
+              onclick="changeImage(this)"
+            />
+          </div>
+          <div class="main-image">
+            <img
+              id="mainImage"
+              src="/frontend/assets/product/dell insprion main.webp"
+              alt="Main Product Image"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="product-details">
+        <h1>Dell Inspiron 15 5515</h1>
+        <p class="price">Rs. 84,000</p>
+        <div class="actions">
+          <input type="number" value="1" min="1" />
+          <button class="btn">Add to Cart</button>
+          <button
+            class="btn secondary"
+            onclick="buyNow('dell-inspiron-15', 'Dell Inspiron 15 5515', 84000)"
+          >
+            Buy Now
+          </button>
+        </div>
+        <ul class="benefits">
+          <li>✅ High Performance with 11th Gen Intel Core i5 Processor</li>
+          <li>✅ 8GB DDR4 RAM for smooth multitasking</li>
+          <li>✅ 512GB SSD for fast boot and storage</li>
+          <li>✅ Full HD 15.6" Display with anti-glare technology</li>
+          <li>✅ Backlit Keyboard for comfortable typing in low light</li>
+          <li>✅ Windows 11 pre-installed</li>
+          <li>✅ Reliable Build Quality</li>
+          <li>✅ 1 Year Warranty with Nepal Warranty Support</li>
+          <li>✅ Fast Delivery Available</li>
+        </ul>
+
+        <h2>Specifications</h2>
+        <table class="specs-table">
+          <tr>
+            <td>Model</td>
+            <td>Dell Inspiron 15 5515</td>
+          </tr>
+          <tr>
+            <td>Processor</td>
+            <td>11th Gen Intel Core i5-1135G7 (4 cores, up to 4.2 GHz)</td>
+          </tr>
+          <tr>
+            <td>RAM</td>
+            <td>8GB DDR4 3200 MHz</td>
+          </tr>
+          <tr>
+            <td>Storage</td>
+            <td>512GB NVMe SSD</td>
+          </tr>
+          <tr>
+            <td>Display</td>
+            <td>15.6" Full HD (1920x1080), Anti-glare</td>
+          </tr>
+          <tr>
+            <td>Graphics</td>
+            <td>Intel Iris Xe Graphics</td>
+          </tr>
+          <tr>
+            <td>Operating System</td>
+            <td>Windows 11 Home</td>
+          </tr>
+          <tr>
+            <td>Keyboard</td>
+            <td>Backlit, Full-size with Numeric Keypad</td>
+          </tr>
+          <tr>
+            <td>Ports</td>
+            <td>
+              2 x USB 3.2, 1 x USB-C, HDMI, SD Card Reader, Headphone Jack
+            </td>
+          </tr>
+          <tr>
+            <td>Battery</td>
+            <td>42 Whr, Up to 7 hours</td>
+          </tr>
+          <tr>
+            <td>Weight</td>
+            <td>Approx. 1.78 kg</td>
+          </tr>
+          <tr>
+            <td>Warranty</td>
+            <td>1 Year</td>
+          </tr>
+          <tr>
+            <td>Origin</td>
+            <td>Imported</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div id="footer"></div>
+    <script>
+      function changeImage(thumb) {
+        document.getElementById("mainImage").src = thumb.src;
+        document
+          .querySelectorAll(".thumbnail")
+          .forEach((el) => el.classList.remove("active"));
+        thumb.classList.add("active");
+      }
+    </script>
+    <script src="/frontend/js/partial.js"></script>
+    <script>
+      includeHTML(
+        "#header",
+        "/frontend/partials/header.html",
+        initHeaderScripts
+      );
+      includeHTML("#footer", "/frontend/partials/footer.html");
+
+      function initHeaderScripts() {
+        const burger = document.querySelector(".hamburger");
+        const menu = document.getElementById("navMenu");
+        if (burger && menu) {
+          burger.addEventListener("click", () => {
+            menu.classList.toggle("show");
+          });
+        }
+        const dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach((dropdown) => {
+          dropdown.addEventListener("click", () => {
+            if (window.innerWidth <= 768) {
+              dropdown.classList.toggle("active");
+            }
+          });
+        });
+      }
+    </script>
+    <script>
+      function buyNow(id, name, price) {
+        const product = { productId: id, productName: name, price: price };
+        localStorage.setItem("selectedProduct", JSON.stringify(product));
+        window.location.href = "/frontend/pages/connect/orderform.html"; // adjust as needed
+      }
+
+      // Make it global:
+      window.buyNow = buyNow;
+    </script>
+  </body>
+</html>
